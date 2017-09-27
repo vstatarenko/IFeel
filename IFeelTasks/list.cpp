@@ -17,11 +17,14 @@ void AddToEnd(Queue** list, int val);
 void PrintList(Queue* list);
 void FreeMemory(Queue** list);
 void DeleteNode(Queue** list, Queue** node);
-void Unpackage(Queue** list, int listLen);
+void Unpackage(Queue** list, int listLen); //repack list
 
 
 int main()
 {	
+	//below some sample to demonstrate how does code work
+	//Input 1-2-3-4-5-6-7-8
+	//Output 1-8-2-7-3-6-4-5
 	Queue* begin = NULL;		
 	AddToBegin(&begin, 2);
 	AddToBegin(&begin,1);
@@ -32,7 +35,7 @@ int main()
 	AddToEnd(&begin, 7);
 	AddToEnd(&begin, 8);
 	PrintList(begin);
-	Unpackage(&begin, ListLength(&begin));
+	Unpackage(&begin, ListLength(&begin)); //repack list
 	PrintList(begin);
 	return 0;
 }
